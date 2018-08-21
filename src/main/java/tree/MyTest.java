@@ -4,14 +4,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.testng.annotations.Test;
-import org.unitils.UnitilsTestNG;
-import org.unitils.spring.annotation.SpringApplicationContext;
-import org.unitils.spring.annotation.SpringBeanByType;
-import tree.dao.BaseDao;
+import tree.tool.BaseDao;
 import tree.domain.Customer;
 import tree.domain.IDCard;
-
-import java.util.Base64;
 
 import static org.testng.Assert.assertNotNull;
 

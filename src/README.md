@@ -1,9 +1,8 @@
-* 此项目使用 Spring 整合 Hibernate，并使用 Unitils 和 TestNG 进行测试
+* 此项目使用 Spring 整合 Hibernate，并使用 Unitils+TestNG+Mockito+DBUnit 进行测试
 * 版本：
-    Spring 4.2.9
-    Hibernate 5.0.5
-    TestNG 6.9.10
-    Unitils 3.4.6       //  ps：（3.4.2 版本最高只支持 Hibernate 4）
+    Spring      4.2.9       Hibernate   5.0.5
+    TestNG      6.9.10      Mockito     2.13.0
+    Unitils     3.4.6       DBUnit      2.5.1
 
 * 在 domain 中，Customer 和 IDCard 是一对一关系，Customer 和 Order 是一对多关系
 

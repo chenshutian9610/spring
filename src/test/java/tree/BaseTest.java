@@ -8,13 +8,10 @@ import org.unitils.UnitilsTestNG;
 import org.unitils.spring.annotation.SpringApplicationContext;
 import org.unitils.spring.annotation.SpringBean;
 import org.unitils.spring.annotation.SpringBeanByType;
-import tree.dao.BaseDao;
 import tree.domain.Customer;
 import tree.domain.IDCard;
 import tree.domain.Order;
-
-import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertNull;
+import tree.tool.BaseDao;
 
 /**
  *  类级别的 @SpringApplicationContext 在测试方法运行时只加载一次
@@ -34,7 +31,7 @@ public class BaseTest extends UnitilsTestNG {
     /**
      *  测试一下是否成功加载 spring 容器
      *  下面三个方法是连在一起的，data() 给 saveOrders() 提供数据，saveOrders() 依赖 saveCustomer()
-     *  注意，这里虽然使用了 BaseDao，但这不是 dao 层的测试，因为 dao 测试会使用到 @ExpectedDataSet 对比数据库数据
+     *  注意，这里虽然使用了 BaseDao，但这不是 tool 层的测试，因为 tool 测试会使用到 @ExpectedDataSet 对比数据库数据
      */
     private Customer customer;
     @Test

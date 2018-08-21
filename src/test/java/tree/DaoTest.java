@@ -22,7 +22,7 @@ public class DaoTest extends BaseTest {
     @Test
     /**
      *  @ExpectedDataSet 会在方法结束后比较数据库中的数据
-     *  通常用来测试 dao 层的方法
+     *  通常用来测试 tool 层的方法
      */
     @ExpectedDataSet("expected_rows.xls")
     public void saveCustomers() throws Exception{
@@ -35,7 +35,7 @@ public class DaoTest extends BaseTest {
         List<IDCard>idCards=XlsDataSetBeanFactory.createBeans(this.getClass(),"expected_rows.xls","tb_idCard",IDCard.class);
         for(int i=0;i<customers.size();i++)
             customers.get(i).setIdCard(idCards.get(i));
-        dao.saveCustomers(customers);
-//        dao.saveIdCards(idCards);
+        dao.saveCustomer(customers);
+//        tool.saveIdCards(idCards);
     }
 }
