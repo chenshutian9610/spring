@@ -1,0 +1,15 @@
+* SpEL 讲解
+  * SpEL 有三个重要的接口
+    ExpressionParser      将表达式语言转化为表达式对象
+    EvaluationContext     设置一个取值上下文
+    Expression            取值 getValue，或设置值 setValue
+  * 使用 spring 框架时，SpEL 默认被开启（以 IoC 容器为取值上下文），
+    然后使用 #{<expression>} 来进行访问，使用 ${<key>} 来进行访问 properties 文件（ ${} 是被简化后的 #{} ）
+  * 在表达式语言中
+    * 可以把表达式字符串当成是 javascript 语法，字符串使用单引号括起来
+    * 使用 T 表示一个类，如 #{T(java.lang.Math).random}
+    * 使用 new 创建一个实例，如 #{new tree.domain.Customer("triski")}
+    * 拥有一个安全导航操作符 ? ，当对象为空指针时返回 null 而不是异常，和 jdk8 提供的 Optional 差不多作用，比如
+      #{customer.idCard?.num}           当 idCard 对象为 null 时直接返回 null
+      #{customer.name?:'no-name'}       相当于 #{customer.name=customer.name!=null?customer.name:'no-name'}
+    * 更多例子可以查看 spring-mvc 项目的 <mvc:resource/>
